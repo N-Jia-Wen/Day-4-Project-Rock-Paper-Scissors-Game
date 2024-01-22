@@ -1,0 +1,67 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+import random 
+
+player_input = int(input("What do you choose? Type 1 for Rock, 2 for Paper or 3 for Scissors.\n"))
+if player_input != 1 and player_input != 2 and player_input != 3:
+  print("Please type a valid number.")
+
+else:
+  options = [rock, paper, scissors]
+
+  player_choice = options[player_input-1]
+
+  computer_input = random.randint(0,2)
+  computer_choice = options[computer_input]
+
+  if player_choice == rock:
+    print(rock)
+    if computer_choice == rock:
+      print(f"Computer chose:\n{rock}\nIt's a draw")
+    if computer_choice == paper:
+      print(f"Computer chose:\n{paper}\nYou lose")
+    if computer_choice == scissors:
+      print(f"Computer chose:\n{scissors}\nYou win!")
+
+  elif player_choice == paper:
+    print(paper)
+    if computer_choice == rock:
+      print(f"Computer chose:\n{rock}\nYou win!")
+    if computer_choice == paper:
+      print(f"Computer chose:\n{paper}\nIt's a draw")
+    if computer_choice == scissors:
+      print(f"Computer chose:\n{scissors}\nYou lose")
+
+  elif player_choice == scissors:
+    print(scissors)
+    if computer_choice == rock:
+      print(f"Computer chose:\n{rock}\nYou lose")
+    if computer_choice == paper:
+      print(f"Computer chose:\n{paper}\nYou win!")
+    if computer_choice == scissors:
+      print(f"Computer chose:\n{scissors}\nIt's a draw")
